@@ -1,0 +1,199 @@
+
+
+body.preload .profile,
+body.preload .box,
+body.preload .box2 {
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+body .profile,
+body .box,
+body .box2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+} 
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --box-bg: gainsboro;
+  --btn-bg: black;
+  --btn-color: white;
+}
+
+
+body.dark {
+  --bg-color: #111111;
+  --text-color: #f0f0f0;
+  --box-bg: #222222;
+  --btn-bg: #333333;
+  --btn-color: #ffffff;
+}
+
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.8s ease;
+}
+
+.box,
+.box2 {
+  background-color: var(--box-bg);
+}
+
+.resume-btn,
+.email-btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+}
+* {
+  box-sizing: border-box;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 60px;
+  background-color: var(--box-bg);
+  width: 94%;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.name {
+  margin: 0;
+  font-size: 22px;
+  font-family:monospace
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.location,
+.me {
+   margin: 0;
+  font-size: 14px;
+  color: gray;
+}
+
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.resume-btn,
+.email-btn,
+.contact-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.resume-btn:hover,  
+.email-btn:hover,
+.socialmedia-btn:hover {
+  background-color: #333;
+}
+
+
+.content {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+
+.box,
+.box2 {
+  flex: 1 1 300px; 
+  min-height: 300px;
+  background-color: var(--box-bg);
+  border: 1px solid #999;
+  border-radius: 5%;
+  padding: 15px;
+  overflow-wrap: break-word; 
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.box h2 {
+  margin-top: 0;
+}
+
+.about {
+  font-size: clamp(14px, 1.5vw, 20px); 
+  margin: 0;
+}
+.contact-container {
+  position: relative;
+  display: inline-block;
+}
+
+.contact-btn {
+  background-color: black;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Popup hidden by default */
+.popup {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 12px 16px;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  min-width: 140px;
+  z-index: 9999;
+
+  opacity: 0;               /* hidden */
+  pointer-events: none;     /* cannot click when hidden */
+  transition: opacity 0.5s ease; /* fade-in effect */
+  display: flex;
+}
+
+.popup a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+.popup a:hover {
+  color: #f39c12;
+}
+
+/* When active (clicked) */
+.popup.show {
+  opacity: 1;
+  pointer-events: auto; /* now clickable */
+}
