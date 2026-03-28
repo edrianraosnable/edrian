@@ -191,6 +191,67 @@ body {
 .popup a:hover {
   color: #f39c12;
 }
+/* ===== Mobile Support Only ===== */
+@media only screen and (max-width: 768px) {
+  
+  /* Profile container: stacked sa mobile */
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 10px;
+  }
+
+  /* Profile picture: smaller on mobile */
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Info text: centered */
+  .info {
+    text-align: center;
+  }
+
+  /* Buttons group: vertical stacking sa mobile */
+  .btn-group {
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+
+  /* Content boxes: full width sa mobile */
+  .box, .box2 {
+    flex: 1 1 100%;
+    min-height: auto;
+  }
+
+  /* Optional: adjust font size for readability */
+  .name {
+    font-size: 20px;
+  }
+  .location, .me {
+    font-size: 12px;
+  }
+
+  /* Make images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Buttons full width for mobile */
+  .resume-btn, .email-btn, .contact-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Reduce margins for smaller screen */
+  .content {
+    margin: 10px;
+    gap: 10px;
+  }
+}
 
 /* When active (clicked) */
 .popup.show {
